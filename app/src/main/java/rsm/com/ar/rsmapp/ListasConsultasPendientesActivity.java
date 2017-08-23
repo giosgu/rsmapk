@@ -19,6 +19,7 @@ public class ListasConsultasPendientesActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeButtonEnabled(true);
         setContentView(R.layout.activity_listas_consultas_pendientes);
     }
 

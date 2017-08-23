@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import rsm.com.ar.rsmapp.activities.RecetasPendientes;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -96,8 +98,10 @@ public class MainActivity extends AppCompatActivity
         } else if(id == R.id.nav_consultasmedicas){
             Intent intent = new Intent(this, ListasConsultasPendientesActivity.class);
             startActivity(intent);
+        }  else if(id == R.id.nav_recetaspendientes){
+            Intent intent = new Intent(this, RecetasPendientes.class);
+            startActivity(intent);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

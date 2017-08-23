@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="rsm.com.ar.rsmapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,13 +23,21 @@
         </activity>
         <activity
             android:name=".ListasConsultasPendientesActivity"
-            android:parentActivityName="rsm.com.ar.rsmapp.MainActivity"
-            android:label="@string/activity_consultas_pendientes">
+            android:label="@string/activity_consultas_pendientes"
+            android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rsm.com.ar.rsmapp.MainActivity" />
-
+        </activity>
+        <activity
+            android:name=".activities.RecetasPendientes"
+            android:label="Recetas Pendientes"
+            android:parentActivityName=".MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rsm.com.ar.rsmapp.MainActivity" />
         </activity>
     </application>
 

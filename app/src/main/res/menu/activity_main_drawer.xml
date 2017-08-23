@@ -6,6 +6,10 @@
             android:id="@+id/nav_consultasmedicas"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/item_consultas_medicas" />
+        <item
+            android:id="@+id/nav_recetaspendientes"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/item_recetas_pendientes" />
 
         <item
             android:id="@+id/nav_camera"
