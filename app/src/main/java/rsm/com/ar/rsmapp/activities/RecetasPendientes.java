@@ -1,6 +1,7 @@
 package rsm.com.ar.rsmapp.activities;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -22,18 +23,21 @@ import java.util.HashMap;
 import java.util.List;
 
 import rsm.com.ar.rsmapp.R;
+import rsm.com.ar.rsmapp.adapters.RecetaAdapter;
 import rsm.com.ar.rsmapp.entities.Receta;
 import rsm.com.ar.rsmapp.mocks.RecetasBuilder;
 
-public class RecetasPendientes extends AppCompatActivity {
+public class RecetasPendientes extends AppCompatActivity implements View.OnClickListener{
 
     ListView listView;
+    RecetaAdapter recetaAdapter;
+    public final static String RECETA_SELECCIONADA = "RECETA_SELECCIONADA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //TODO sacar el mock
-        List<Receta> recetas = new RecetasBuilder().generarListadoRecetas();
+        ArrayList<Receta> recetas = (ArrayList<Receta>) new RecetasBuilder().generarListadoRecetas();
         //seteo el layout
         setContentView(R.layout.activity_recetas_pendientes);
         // Get a support ActionBar corresponding to this toolbar
@@ -42,33 +46,23 @@ public class RecetasPendientes extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setHomeButtonEnabled(true);
         listView = (ListView) findViewById(R.id.listaRecetasPendientes);
-        SimpleAdapter sa = this.setupSimpleAdapter(recetas);
-        listView.setAdapter(sa);
+       // SimpleAdapter sa = this.setupSimpleAdapter(recetas);
+        recetaAdapter = new RecetaAdapter(this, R.layout.activity_recetas_pendientes, recetas);
+        listView.setAdapter(recetaAdapter);
+
+        ((ListView)findViewById(R.id.listaRecetasPendientes)).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                Receta receta = (Receta) ((ListView) RecetasPendientes.this.findViewById(R.id.listaRecetasPendientes)).getItemAtPosition((int) id);
+                //Toast.makeText(RecetasPendientes.this, receta.getDosis(), Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(RecetasPendientes.this,PrescribirRecetaActivity.class);
+                intent.putExtra(RECETA_SELECCIONADA, receta);
+                startActivity(intent);
+            }
+        });
     }
 
-    private SimpleAdapter setupSimpleAdapter(List<Receta> lista){
-        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
-        HashMap<String,String> item;
-        for (Receta receta: lista ) {
-            item = new HashMap<String,String>();
-            item.put("linea1", receta.getPaciente());
-            item.put("linea2", receta.getMedicamento());
-            list.add(item);
-        }
-        SimpleAdapter sa = new SimpleAdapter(this, list,
-                R.layout.two_lines,
-                new String[] { "linea1","linea2" },
-                new int[] {R.id.line_a, R.id.line_b});
+    @Override
+    public void onClick(View view) {
 
-        return sa;
     }
-/*
-      public void onItemClick (AdapterView < ? > adapter, View view,int position, long id){
-        //By using data id
-        StringBuilder sb = new StringBuilder("Selected:\n");
-        HashMap<String, String> selected =
-                (HashMap<String, String>) ((ListView) RecetasPendientes.this.findViewById(R.id.listaRecetasPendientes)).getItemAtPosition((int) id);
-        selected.get("line1");
-    }
-*/
 }

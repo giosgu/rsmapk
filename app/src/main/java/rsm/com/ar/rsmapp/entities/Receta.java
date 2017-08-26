@@ -1,12 +1,13 @@
 package rsm.com.ar.rsmapp.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by guido.giosa on 20/8/2017.
  */
 
-public class Receta {
+public class Receta implements Serializable{
 
     public String paciente;
     public Date fechaSolicitud;

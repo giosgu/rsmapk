@@ -25,6 +25,7 @@
             android:name=".ListasConsultasPendientesActivity"
             android:label="@string/activity_consultas_pendientes"
             android:parentActivityName=".MainActivity">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -34,11 +35,13 @@
             android:name=".activities.RecetasPendientes"
             android:label="Recetas Pendientes"
             android:parentActivityName=".MainActivity">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rsm.com.ar.rsmapp.MainActivity" />
         </activity>
+        <activity android:name=".activities.PrescribirRecetaActivity"></activity>
     </application>
 
 </manifest>

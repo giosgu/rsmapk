@@ -13,8 +13,8 @@ import rsm.com.ar.rsmapp.entities.Receta;
 
 public class RecetasBuilder {
 
-    public List<Receta> generarListadoRecetas(){
-        List<Receta> recetas = new ArrayList<>();
+    public ArrayList<Receta> generarListadoRecetas(){
+        ArrayList<Receta> recetas = new ArrayList<>();
         recetas.add(new Receta("Leandro Gvirtz", new Date(), "Lotrial", "200 mg", "comprimidos" ,2));
         recetas.add(new Receta("Luis Stringoli", new Date(), "Alcanfort", "200 mg", "comprimidos" ,2));
         recetas.add(new Receta("Lucía Pechloff", new Date(), "Saraza", "200 mg", "comprimidos" ,2));

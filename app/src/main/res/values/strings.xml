@@ -13,4 +13,6 @@
     <string name="id_label">id label is</string>
     <string name="item_recetas_pendientes">Prescripciones</string>
     <string name="recetas_pendientes_lista_sin_resultados">No hay prescripciones pendientes</string>
+    <string name="diagnostico">Diagnóstico</string>
+    <string name="nombre_medicamento">Nombre Genérico</string>
 </resources>
