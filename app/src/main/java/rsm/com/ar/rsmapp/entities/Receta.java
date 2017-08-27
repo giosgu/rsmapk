@@ -9,12 +9,22 @@ import java.util.Date;
 
 public class Receta implements Serializable{
 
-    public String paciente;
-    public Date fechaSolicitud;
-    public String medicamento;
-    public String dosis;
-    public String presentación;
-    public int cantidad;
+    private String paciente;
+    private Date fechaSolicitud;
+    private String medicamento;
+    private String dosis;
+    private String presentación;
+    private int cantidad;
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    private String marca;
 
     public Receta(String paciente, Date fechaSolicitud, String medicamento, String dosis, String presentación, int cantidad) {
         this.paciente = paciente;

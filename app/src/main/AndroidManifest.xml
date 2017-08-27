@@ -41,7 +41,26 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rsm.com.ar.rsmapp.MainActivity" />
         </activity>
-        <activity android:name=".activities.PrescribirRecetaActivity"></activity>
+        <activity
+            android:name=".activities.PrescribirRecetaActivity"
+            android:label="Verificá los datos"
+            android:parentActivityName=".activities.RecetasPendientes"
+            android:theme="@style/prescribirRecetaTheme">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rsm.com.ar.rsmapp.activities.RecetasPendientes" />
+        </activity>
+        <activity android:name=".activities.PrescribirRecetaPaso2Activity"
+            android:label="Ingresá el dianóstico"
+            android:parentActivityName=".activities.PrescribirRecetaActivity"
+            android:theme="@style/prescribirRecetaTheme">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rsm.com.ar.rsmapp.activities.PrescribirRecetaActivity" />
+        </activity>
     </application>
 
 </manifest>

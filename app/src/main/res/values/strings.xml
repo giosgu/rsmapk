@@ -15,4 +15,11 @@
     <string name="recetas_pendientes_lista_sin_resultados">No hay prescripciones pendientes</string>
     <string name="diagnostico">Diagnóstico</string>
     <string name="nombre_medicamento">Nombre Genérico</string>
+    <string name="marca_medicamento">Marca</string>
+    <string name="dosis">Dosis</string>
+    <string name="presentacion">Presentación</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="prescribir_nombre_label">Nombre Medicamento *</string>
+    <string name="continuar">Continuar</string>
+    <string name="valor_requerido">Requerido!</string>
 </resources>
